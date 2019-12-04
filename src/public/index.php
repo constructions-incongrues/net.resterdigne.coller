@@ -17,4 +17,4 @@ $insult = $insults[array_rand($insults)];
 ?>
 
 <p><?php echo $insult ?></p>
-<img src="images/<?php echo rawurlencode($imageUrl) ?>" style="height:100%;"/>
+<img src="images/<?php echo $imageUrl ?>" style="height:100%;"/>
