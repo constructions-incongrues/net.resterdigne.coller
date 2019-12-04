@@ -10,7 +10,9 @@ $images = $finder
     ->in(__DIR__.'/images/oppressors');
 $images = iterator_to_array($images);
 $image = $images[array_rand($images)];
-$imageUrl = implode('/', array_slice(explode('/', $image->getPathName()), -3, 3));
+$urlParts = array_slice(explode('/', $image->getPathName()), -3, 3);
+$urlParts[2] = rawurlencode($urlParts[2]);
+$imageUrl = implode('/', $urlParts);
 
 $insults = file(__DIR__.'/insults.txt');
 $insult = $insults[array_rand($insults)];
