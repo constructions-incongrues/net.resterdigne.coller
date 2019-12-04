@@ -1,0 +1,31 @@
+version: '2.4'
+
+services:
+  php:
+    build: .
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "public/"]
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.front.rule=Host(`coller.localhost`)"
+      - "traefik.http.routers.front.entrypoints=web"
+      - "traefik.http.services.front.loadbalancer.server.port=8080"
+    volumes:
+      - ./src:/usr/local/src
+      - /home/tristan/Documents/Workspaces/constructions-incongrues/net.resterdigne.lagrandepurge/var/images:/usr/local/src/public/images
+
+  traefik:
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    image: traefik:2.0.4
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.coller.localhost`)"
+      - "traefik.http.routers.traefik.entrypoints=web"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
