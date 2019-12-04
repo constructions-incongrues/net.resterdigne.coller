@@ -17,6 +17,38 @@ $imageUrl = implode('/', $urlParts);
 $insults = file(__DIR__.'/insults.txt');
 $insult = $insults[array_rand($insults)];
 ?>
+<html>
+    <head>
+        <style>
+        body {
+            background-color: #000;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Serif'
+        }
 
-<p><?php echo $insult ?></p>
-<img src="images/<?php echo $imageUrl ?>" style="height:100%;"/>
+        #image {
+            height: 100%;
+            width: 50%;
+        }
+
+        #overlay {
+            color: #EEE;
+            font-size: 5em;
+            /* text-shadow: 2px 2px 2px #000; */
+            text-align: center;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            -webkit-text-stroke: 1px #777;
+        }
+        </style>
+    </head>
+
+    <body>
+        <p id="overlay"><?php echo $insult ?></p>
+        <img id="image" src="images/<?php echo $imageUrl ?>" />
+    </body>
+</html>
