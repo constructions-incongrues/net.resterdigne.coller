@@ -12,7 +12,7 @@ $images = iterator_to_array(
 $image = $images[array_rand($images)];
 
 $bgColors = ['red', 'lime', 'yellow', 'black', 'aqua', 'fuchsia'];
-$bgColors = ['#fff', '#eee', '#ddd', '#ccc', '#bbb', '#aaa', '#999', '#888', '#777', '#666', '#555', '#444', '#333', '#222', '#111', '#000'];
+$bgColors = ['#777', '#666', '#555', '#444', '#333', '#222', '#111', '#000'];
 $bgColor = $bgColors[array_rand($bgColors)];
 ?>
 <!doctype html>
@@ -36,6 +36,7 @@ $bgColor = $bgColors[array_rand($bgColors)];
   <style>
     body {
       background-color: <?php echo $bgColor ?>;
+      font-family: sans-serif;
     }
     .image {
         position: fixed;
@@ -48,6 +49,17 @@ $bgColor = $bgColors[array_rand($bgColors)];
         margin: auto;
         overflow: auto;
     }
+    .doc {
+      margin: 5em;
+      color: #fff;
+      width: 20%;
+    }
+    .doc h1 {
+      -webkit-text-stroke: 0.5px #333;
+    }
+    a, a:visited {
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -57,6 +69,19 @@ $bgColor = $bgColors[array_rand($bgColors)];
   <![endif]-->
 
   <!-- Add your site or application content here -->
+  <div class="doc">
+    <h1>Rester Digne : Coller</h1>
+    <p>
+      Ce site génère des affiches au format A4 prêtes à être <a href="#" onclick="window.print(); return false;">imprimées</a> et collées sur un mur.
+    </p>
+    <p>
+      Les affiches sont générées à partir d'une liste de photographies de complices / zélateurs / chiens de gardes / etc de l'ordre néo-libéral en place et d'une base de données d'insultes.
+    </p>
+    <h2>Contribuer</h2>
+    <ul>
+      <li><a href="">Proposer une insulte</a></li>
+    </ul>
+  </div>
   <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf" class="print" onclick="window.print(); return false;">
     <img class="image" src="coller/png/<?php echo rawurlencode($image->getRelativePathName()) ?>"></img>
   </a>
