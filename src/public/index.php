@@ -75,12 +75,26 @@ $bgColor = $bgColors[array_rand($bgColors)];
       Ce site génère des affiches au format A4 prêtes à être <a href="#" onclick="window.print(); return false;">imprimées</a> et collées sur un mur.
     </p>
     <p>
-      Les affiches sont générées à partir d'une liste de photographies de complices / zélateurs / chiens de gardes / etc de l'ordre néo-libéral en place et d'une base de données d'insultes.
+      Les affiches sont générées à partir d'une <a href="https://github.com/constructions-incongrues/net.resterdigne.coller/blob/master/etc/pinacotron/keywords.txt">liste de complices / zélateurs / chiens de gardes / etc</a> de l'ordre néo-libéral en place et d'une <a href="https://github.com/constructions-incongrues/net.resterdigne.coller/blob/master/etc/insults.txt">base de données d'insultes</a>.
     </p>
+    <h2>Affiche</h2>
+    <ul>
+      <li><a href="#" onclick="window.print(); return false;">Imprimer</a></li>
+      <li><a target="_blank" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf">Télécharger</a></li>
+      <li><a href="">Regénérer</a></li>
+    </ul>
     <h2>Contribuer</h2>
     <ul>
-      <li><a href="">Proposer une insulte</a></li>
+      <li><a target="_blank" href="https://github.com/constructions-incongrues/net.resterdigne.coller/edit/master/etc/insults.txt">Proposer une insulte</a></li>
+      <li><a target="_blank" href="https://github.com/constructions-incongrues/net.resterdigne.coller/edit/master/etc/pinacotron/keywords.txt">Proposer un individu</a></li>
     </ul>
+    <h2>Crédits</h2>
+    <p>
+      Une grande partie des insultes est extraite des merveilleux coffrets du <a target="_blank" href="http://le-tampographe-sardon.blogspot.com/">Tampographe Sardon</a>.
+    </p>
+    <p>
+      Le code source est <a href="https://github.com/constructions-incongrues/net.resterdigne.coller">diffusé</a> sous licence <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">GPLv3</a>.
+    </p>
   </div>
   <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf" class="print" onclick="window.print(); return false;">
     <img class="image" src="coller/png/<?php echo rawurlencode($image->getRelativePathName()) ?>"></img>
