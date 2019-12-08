@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   window.setTimeout(function() {
     window.location.reload();
-  }, 10000);
+  }, 5000);
 });
