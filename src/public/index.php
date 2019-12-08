@@ -53,7 +53,7 @@ $image = $images[array_rand($images)];
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf">
+  <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf" class="print" onclick="window.print(); return false;">
     <img class="image" src="coller/png/<?php echo rawurlencode($image->getRelativePathName()) ?>"></img>
   </a>
 
