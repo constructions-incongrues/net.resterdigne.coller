@@ -10,6 +10,10 @@ $images = iterator_to_array(
     ->in(__DIR__.'/coller/png')
 );
 $image = $images[array_rand($images)];
+
+$bgColors = ['red', 'lime', 'yellow', 'black', 'aqua', 'fuchsia'];
+$bgColors = ['#fff', '#eee', '#ddd', '#ccc', '#bbb', '#aaa', '#999', '#888', '#777', '#666', '#555', '#444', '#333', '#222', '#111', '#000'];
+$bgColor = $bgColors[array_rand($bgColors)];
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -31,7 +35,7 @@ $image = $images[array_rand($images)];
 
   <style>
     body {
-      background-color: #000;
+      background-color: <?php echo $bgColor ?>;
     }
     .image {
         position: fixed;
