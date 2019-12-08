@@ -96,8 +96,8 @@ $bgColor = $bgColors[array_rand($bgColors)];
       Le code source est <a href="https://github.com/constructions-incongrues/net.resterdigne.coller">diffusé</a> sous licence <a href="https://www.gnu.org/licenses/quick-guide-gplv3.fr.html">GPLv3</a>.
     </p>
   </div>
-  <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo rawurlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf" class="print" onclick="window.print(); return false;">
-    <img class="image" src="coller/png/<?php echo rawurlencode($image->getRelativePathName()) ?>"></img>
+  <a target="_blank" title="IMPRIMER" href="coller/pdf/<?php echo urlencode(pathinfo($image->getRelativePathName())['filename']) ?>.pdf" class="print" onclick="window.print(); return false;">
+    <img class="image" src="coller/png/<?php echo urlencode($image->getRelativePathName()) ?>"></img>
   </a>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
