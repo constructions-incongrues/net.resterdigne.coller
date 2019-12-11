@@ -86,7 +86,7 @@ $bgColor = $bgColors[array_rand($bgColors)];
     <h2>Contribuer</h2>
     <ul>
       <li><a target="_blank" href="https://github.com/constructions-incongrues/net.resterdigne.coller/edit/master/etc/insults.txt">Proposer une insulte</a></li>
-      <li><a target="_blank" href="https://github.com/constructions-incongrues/net.resterdigne.coller/edit/master/etc/pinacotron/keywords.txt">Proposer un individu</a></li>
+      <li><a target="_blank" href="https://github.com/constructions-incongrues/net.resterdigne.coller/edit/master/etc/pinacotron/oppressors/keywords.txt">Proposer un individu</a></li>
     </ul>
     <h2>Crédits</h2>
     <p>
